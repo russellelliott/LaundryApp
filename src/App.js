@@ -21,7 +21,7 @@ function App() {
         <nav>
           <Link to="/"> Home </Link>
           <Link to="/login"> Login </Link>
-      </nav>
+        </nav>
         <Routes>
               <Route path='/' element={<Home />} />
               <Route path="/login" element={<Login/>}/>
