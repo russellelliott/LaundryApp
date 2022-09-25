@@ -11,11 +11,16 @@ function Home() {
     </div>
   );*/
 
-  const [food, setFood] = React.useState('fruit');
-  const [drink, setDrink] = React.useState('water');
+  const [food, setFood] = React.useState('washing');
+  const [drink, setDrink] = React.useState('complete');
 
   const handleFoodChange = (event) => {
     setFood(event.target.value);
+    console.log(event.target.value);
+    if(event.target.value == 'stop'){
+        //if laundry is done, automatically set the other field to complete
+        setDrink('complete');
+    }
   };
 
   const handleDrinkChange = (event) => {
@@ -25,22 +30,22 @@ function Home() {
   return (
     <div>
       <Dropdown
-        label="What do we eat?"
+        label="Stage of Laundry"
         options={[
-          { label: 'Fruit', value: 'fruit' },
-          { label: 'Vegetable', value: 'vegetable' },
-          { label: 'Meat', value: 'meat' },
+          { label: 'Washing', value: 'washing' },
+          { label: 'Drying', value: 'drying' },
+          { label: 'Folding', value: 'folding' },
+          { label: 'Stop', value: 'stop' },
         ]}
         value={food}
         onChange={handleFoodChange}
       />
 
       <Dropdown
-        label="What do we drink?"
+        label="Stage Status"
         options={[
-          { label: 'Water', value: 'water' },
-          { label: 'Beer', value: 'beer' },
-          { label: 'Wine', value: 'wine' },
+          { label: 'Incomplete', value: 'incomplete' },
+          { label: 'Complete', value: 'complete' },
         ]}
         value={drink}
         onChange={handleDrinkChange}
