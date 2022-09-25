@@ -28,7 +28,7 @@ function Home() {
   };
 
   return (
-    <div>
+    /*<div>
       <Dropdown
         label="Stage of Laundry"
         options={[
@@ -54,6 +54,23 @@ function Home() {
       <p>We eat {food}!</p>
       <p>We drink {drink}!</p>
     </div>
+  );*/
+  <div>
+    <div>
+        <h1>Set Laundry Status</h1>
+        <button value = {"washing"} onClick={handleFoodChange}>Washing</button>
+        <button value = {"drying"} onClick={handleFoodChange}>Drying</button>
+        <button value = {"folding"} onClick={handleFoodChange}>Folding</button>
+        <button value = {"stop"} onClick={handleFoodChange}>Stop</button>
+        <h1>{food}</h1>
+    </div>
+    <div>
+        <h1>Set Completion Status</h1>
+        <button value = {"incomplete"} onClick={handleDrinkChange}>Incomplete</button>
+        <button value = {"complete"} onClick={handleDrinkChange}>Complete</button>
+        <h1>{drink}</h1>
+    </div>
+  </div>
   );
 }
 
